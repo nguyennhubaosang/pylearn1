@@ -1,5 +1,9 @@
+body{
+    background-color: #264653;
+}
 p {
     text-align: center;
-    font-size: 60px;
+    font-size: 960px;
     margin-top: 0px;
+    color: #e76f51;
   }
