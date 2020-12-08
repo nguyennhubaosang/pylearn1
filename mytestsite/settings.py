@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'kmg*cj6_vt6%u8ug^+46pshg(rxk8nidmw-iv-*v98b4*h5f20'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -56,10 +56,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mytestsite.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +72,7 @@ TEMPLATES = [
         },
     },
 ]
+#TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 
 WSGI_APPLICATION = 'mytestsite.wsgi.application'
 
@@ -125,7 +127,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_assets')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_assets')]
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
